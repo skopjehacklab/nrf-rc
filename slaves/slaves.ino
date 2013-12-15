@@ -24,7 +24,7 @@ void setup(void)
 
   // This simple sketch opens a single pipes for these two nodes to communicate
   // back and forth.  One listens on it, the other talks to it.
-  radio.openReadingPipe(1,pipe);
+  radio.openReadingPipe(1,pipe+3);
   radio.startListening();
 
   radio.printDetails();
