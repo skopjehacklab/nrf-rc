@@ -12,8 +12,8 @@ const uint64_t pipe = 0xE8E8F0F0E1LL;
 // Payload
 //
 
-uint8_t states[1];
-uint8_t states_size = sizeof(states);
+uint8_t state;
+uint8_t state_size = sizeof(state);
 
 void setup(void)
 {
@@ -43,10 +43,10 @@ void loop(void)
     while (!done) {
 
       // Fetch the payload, and see if this was the last one.
-      done = radio.read( states, states_size );
+      done = radio.read( state, state_size );
       
       // Spew it
-      printf("%d",states[0]);
+      printf("%d",state);
     }
     printf("\r\n");
   }
