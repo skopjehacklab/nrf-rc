@@ -31,18 +31,18 @@ void setup(void)
 }
 
 void loop(void)
-{  
+{
   int address;
   char cmd[10];
   char c;
-  
+
   while ( Serial.available() ) {
     c = Serial.read();
     if ( c != '\r' ) {
       input += c;
     } else {
       input.toCharArray(cmd,10);
-      byte okparse = sscanf(cmd, "%d %d", &address, state);
+      byte okparse = sscanf(cmd, "%d %d", &address, &state);
       printf("%d", state);
 
       if (okparse == 2 ) {
