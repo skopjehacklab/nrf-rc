@@ -12,7 +12,7 @@ RF24 radio(9,10);
 // Single radio pipe address for the 2 nodes to communicate.
 const uint64_t pipe = 0xE8E8F0F0E1LL;
 
-uint8_t state = 0;
+int state = 0;
 uint8_t state_size = sizeof(state);
 
 void setup(void)
@@ -32,7 +32,7 @@ void setup(void)
 
 void loop(void)
 {  
-  uint8_t address;
+  int address;
   char cmd[10];
   char c;
   
@@ -43,7 +43,7 @@ void loop(void)
     } else {
       input.toCharArray(cmd,10);
       byte okparse = sscanf(cmd, "%d %d", &address, state);
-      printf(state);
+      printf("%d", state);
 
       if (okparse == 2 ) {
         radio.openWritingPipe(pipe+(uint64_t)address);
