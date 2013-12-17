@@ -43,7 +43,7 @@ void loop(void)
     while (!done) {
 
       // Fetch the payload, and see if this was the last one.
-      done = radio.read( state, state_size );
+      done = radio.read( &state, state_size );
       
       // Spew it
       printf("%d",state);
