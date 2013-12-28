@@ -14,9 +14,22 @@ There will be one master node that will have a constant listening pipe. The othe
 
 TODO
 =====
-slave:
+
+== Hardware ==
+
+* Test the 220AC-to-5DC adapters
+* Make a *slave* board
+
+
+
+== Software ==
+* Make a *ping* utility to test the loss of packets between two nodes
+
+= slave: =
 
 * Pong back the received state
 * Add external switches for setting the address offset
 
-master:
+= master: =
+
+* Implement a reliable serial communication
